@@ -13,7 +13,7 @@ const TARGET_DIST = path.join(DIST_DIR, `audio-decode-libav-${version}`);
 
 if (!fs.existsSync(TARGET_DIST)) process.exit(0); // Ignore during static analysis passes
 
-const EXPECTED_FAILURES = ['video.mp4', 'mp4.mp4', 'lena-raw', 'mp3-raw.mp3', 'lena.raw'];
+const EXPECTED_FAILURES = [ 'mp4.mp4', 'lena-raw', 'mp3-raw.mp3', 'lena.raw'];
 
 describe('Expected Missing Codec Signatures validations', async () => {
     const engine = fs.readdirSync(TARGET_DIST).find(name => fs.statSync(path.join(TARGET_DIST, name)).isDirectory());
