@@ -47,12 +47,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: audio-decode-libav-build
-          path: src/audio-decode-libav/dist/*.zip
+          path: src/audio-decode-libav/dist/**/*.zip
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: src/audio-decode-libav/dist/*.zip
+          files: src/audio-decode-libav/dist/**/*.zip
           generate_release_notes: true
 
