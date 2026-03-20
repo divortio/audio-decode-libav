@@ -1,0 +1,34 @@
+{
+  "name": "@divortio/libav.js-audio-thr-js",
+  "version": "6.8.8.0",
+  "description": "Custom libav.js build for audio manipulation. Engine: thr.js",
+  "main": "dist/libav-6.8.8.0-audio.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divortio/libav.js-audio.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "libav",
+    "audio",
+    "video",
+    "av",
+    "encode",
+    "decode",
+    "transcode",
+    "mux",
+    "demux"
+  ],
+  "author": "divortio",
+  "bugs": {
+    "url": "https://github.com/divortio/libav.js-audio/issues"
+  },
+  "homepage": "https://github.com/divortio/libav.js-audio#readme",
+  "exports": {
+    "require": "./dist/libav-6.8.8.0-audio.js",
+    "default": "./dist/libav-6.8.8.0-audio.js"
+  }
+}

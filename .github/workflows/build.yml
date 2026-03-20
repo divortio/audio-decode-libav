@@ -12,28 +12,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout audio-decode-libav
         uses: actions/checkout@v4
+        with:
+          path: src/audio-decode-libav
+
+      - name: Checkout libav.js-audio
+        uses: actions/checkout@v4
+        with:
+          repository: divortio/libav.js-audio
+          path: src/libav.js-audio
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
+      - name: Build libav.js-audio dependency
+        run: cd src/libav.js-audio && bash build/sync_and_build.sh
+
       - name: Sync and Build 6 Variants array
-        run: bash build/sync_and_build.sh
+        run: cd src/audio-decode-libav && bash build/sync_and_build.sh
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: audio-decode-libav-build
-          path: dist/*.zip
+          path: src/audio-decode-libav/dist/*.zip
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.zip
+          files: src/audio-decode-libav/dist/*.zip
           generate_release_notes: true
 
       - name: Trigger Downstream neiro-libav build

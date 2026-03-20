@@ -30,4 +30,4 @@ Currently expected format misses:
 * `mp3-raw.mp3`
 * `lena.raw`
 
-These blocks bypass the sniffer tests recursively checked within `tests/missingCodecs.test.js` validating their rejection structures automatically!
+These blocks bypass the sniffer tests recursively checked within `tests/fixtures.missing.test.js` validating their rejection structures automatically!

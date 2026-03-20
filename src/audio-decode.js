@@ -17,14 +17,16 @@ export default async function decode(src) {
     let type = getAudioType(buf) || 'wav';
     if (!decoders[type]) throw Error('No decoder for ' + type);
 
-    let dec = await decoders[type]();
+    const decoderFactory = decoders[type];
+    // Decoders map returns `streamDecoder` generator proxy usually, but we bypass for performance!
+    let dec = new Decoder(type);
+    await dec.ready;
+    
     try {
-        let result = await dec.decode(buf);
-        let flushed = await dec.decode();
-        return merge(result, flushed);
-    } catch (e) {
+        let result = await dec.decodeFileExact(buf);
+        return norm(result);
+    } finally {
         dec.free();
-        throw e;
     }
 }
 
@@ -64,7 +66,8 @@ export const decoders = {
     caf: createDecoder('caf'),
     webm: createDecoder('webm'),
     amr: createDecoder('amr'),
-    wma: createDecoder('wma')
+    wma: createDecoder('wma'),
+    avi: createDecoder('avi')
 };
 
 function streamDecoder(onDecode, onFlush, onFree) {

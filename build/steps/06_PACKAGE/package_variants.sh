@@ -3,7 +3,7 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_DIR="$( cd "$DIR/../../.." && pwd )"
-VERSION=$(node -p "require('$ROOT_DIR/src/package.json').version")
+VERSION=$(node -p "require('$ROOT_DIR/package.json').version")
 BASE_DIST_DIR="$ROOT_DIR/dist/audio-decode-libav-$VERSION"
 
 echo "Zipping Engine distributions..."

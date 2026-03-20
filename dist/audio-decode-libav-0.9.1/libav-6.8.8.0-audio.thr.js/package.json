@@ -1,0 +1,58 @@
+{
+  "name": "@divortio/audio-decode-libav",
+  "version": "0.9.1",
+  "description": "Decode audio data completely natively locally and in the browser via streamed WebAssembly Engines",
+  "type": "module",
+  "main": "src/audio-decode.js",
+  "types": "src/audio-decode.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./src/audio-decode.js",
+      "node": "./src/audio-decode.js",
+      "default": "./src/audio-decode.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "audio-lena": "^2.3.0",
+    "base64-arraybuffer": "^1.0.2",
+    "jszip": "^3.10.1",
+    "playwright": "^1.58.0",
+    "tst": "^9.2.2"
+  },
+  "scripts": {
+    "test": "node --test tests/runAll.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divortio/audio-decode-libav.git"
+  },
+  "keywords": [
+    "audio",
+    "decode",
+    "decoder",
+    "codec",
+    "mp3",
+    "wav",
+    "ogg",
+    "vorbis",
+    "opus",
+    "flac",
+    "aac",
+    "m4a",
+    "qoa",
+    "aiff",
+    "caf",
+    "webm",
+    "amr",
+    "wma",
+    "pcm",
+    "streaming"
+  ],
+  "author": "divortio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divortio/audio-decode-libav/issues"
+  },
+  "homepage": "https://github.com/divortio/audio-decode-libav#readme"
+}

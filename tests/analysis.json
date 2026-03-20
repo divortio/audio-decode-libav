@@ -1,0 +1,34 @@
+{
+  "mp4.mp4": {
+    "typeNormal": "m4a",
+    "typeExtended": "m4a",
+    "first64BytesHex": "00 00 00 1c 66 74 79 70 69 73 6f 6d 00 00 02 00 69 73 6f 6d 69 73 6f 32 6d 70 34 31 00 00 00 08 66 72 65 65 00 00 01 94 6d 64 61 74 de 04 00 4c 61 76 63 35 38 2e 31 33 34 2e 31 30 30 00 02 80",
+    "first64BytesAscii": "....ftypisom....isomiso2mp41....free....mdat...Lavc58.134.100..."
+  },
+  "mp3-raw.mp3": {
+    "typeNormal": "mp3",
+    "typeExtended": "mp3",
+    "first64BytesHex": "ff fb 50 c4 00 00 07 f4 33 46 75 81 80 01 c7 a6 ab c3 34 80 00 0a 34 50 64 e2 f0 14 d9 b0 30 46 c9 1d b0 76 91 b8 c5 d0 7b ee c3 6e 5b ff 0f c6 e5 f4 e2 02 00 00 00 08 40 40 1f 07 c1 f3 f8 21",
+    "first64BytesAscii": "..P.....3Fu.......4...4Pd.....0F...v....{..n[...........@@.....!"
+  },
+  "lena.raw": {
+    "first64BytesHex": "00 00 a4 ba 00 00 48 ba e0 01 f0 39 10 01 88 3a e8 01 f4 3a 6c 01 36 3b c0 01 60 3b 22 01 91 3b 68 01 b4 3b 78 01 bc 3b 8c 01 c6 3b 7c 01 be 3b 44 01 a2 3b 18 01 8c 3b 94 01 4a 3b 08 01 04 3b",
+    "first64BytesAscii": "......H....9...:...:l.6;..`;\"..;h..;x..;...;|..;D..;...;..J;...;"
+  },
+  "video_aac.3gp": {
+    "first64BytesHex": "",
+    "first64BytesAscii": ""
+  },
+  "lena-alaw.caf": {
+    "typeNormal": "caf",
+    "typeExtended": "caf",
+    "first64BytesHex": "63 61 66 66 00 01 00 00 64 65 73 63 00 00 00 00 00 00 00 20 40 bf 40 00 00 00 00 00 61 6c 61 77 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 08 63 68 61 6e 00 00 00 00 00 00 00 0c",
+    "first64BytesAscii": "caff....desc....... @.@.....alaw....................chan........"
+  },
+  "wav.wav": {
+    "typeNormal": "wav",
+    "typeExtended": "wav",
+    "first64BytesHex": "52 49 46 46 de 01 00 00 57 41 56 45 66 6d 74 20 10 00 00 00 01 00 01 00 44 ac 00 00 44 ac 00 00 01 00 08 00 64 61 74 61 b9 01 00 00 7f 83 86 89 8c 8f 92 95 98 9a 9e a0 a2 a5 a8 a9 ac ad af b3",
+    "first64BytesAscii": "RIFF....WAVEfmt ........D...D.......data........................"
+  }
+}

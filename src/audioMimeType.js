@@ -44,6 +44,8 @@ export const getAudioMimeType = function(buffer) {
             return 'audio/amr';
         case 'webm':
             return 'audio/webm';
+        case 'avi':
+            return 'video/avi';
         case 'qoa':
             return 'audio/qoa';
         default:

@@ -1,6 +1,6 @@
 {
   "name": "@divortio/audio-decode-libav",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Decode audio data completely natively locally and in the browser via streamed WebAssembly Engines",
   "type": "module",
   "main": "src/audio-decode.js",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "audio-lena": "^2.3.0",
     "base64-arraybuffer": "^1.0.2",
+    "jszip": "^3.10.1",
     "playwright": "^1.58.0",
     "tst": "^9.2.2"
   },

@@ -10,7 +10,7 @@ cd "$SRC_DIR"
 npm install
 npm install --save-dev jszip # just in case for tests
 
-VERSION=$(node -p "require('./package.json').version")
+VERSION=$(node -p "require('../package.json').version")
 BASE_DIST_DIR="$ROOT_DIR/dist/audio-decode-libav-$VERSION"
 rm -rf "$BASE_DIST_DIR"
 mkdir -p "$BASE_DIST_DIR"
@@ -33,7 +33,7 @@ for ENGINE_PATH in "$LIBAV_ENGINES_DIR"/*/; do
     cp "$SRC_DIR/decoder.js" "$VARIANT_DIST/"
     
     cp "$SRC_DIR/audio-decode.d.ts" "$VARIANT_DIST/"
-    cp "$SRC_DIR/package.json" "$VARIANT_DIST/"
+    cp "$ROOT_DIR/package.json" "$VARIANT_DIST/"
     cp "$ROOT_DIR/README.md" "$VARIANT_DIST/" || true
     
     # Check if Decoder natively injected Libav, replace its import
@@ -41,7 +41,7 @@ for ENGINE_PATH in "$LIBAV_ENGINES_DIR"/*/; do
         node -e "
             const fs = require('fs');
             let code = fs.readFileSync('$VARIANT_DIST/decoder.js', 'utf8');
-            code = code.replace(/import LibAVFactory.*?;/g, \`import LibAVFactory from './libav.js-audio/${ENGINE_NAME}';\`);
+            code = code.replace(/import LibAVFactory.*?;/g, \`import LibAVFactory from './libav.js-audio/dist/${ENGINE_NAME}';\`);
             fs.writeFileSync('$VARIANT_DIST/decoder.js', code);
         "
     fi
